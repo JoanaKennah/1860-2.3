@@ -12,6 +12,6 @@ and
 not
 
 and
-pop argument 2
 
+pop argument 2
 push argument 2
