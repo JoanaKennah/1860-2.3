@@ -1,16 +1,10 @@
 push argument 0
 push argument 1
-
-push argument 0
-push argument 1
 or
-
 push argument 0
 not
 push argument 1
 not
 or
-
 and
-
 pop argument 2
