@@ -1,16 +1,16 @@
 push argument 0
 pop local 0
 push constant 0
-pop argument 1
-push local 0
-push constant 0
+pop local 2
+push local 0 
+push constant 0 
 gt
 if-goto SQUARE
-push local 0
-beg
+push local 0 
+neg
 pop local 0
 label SQUARE
-push constant 0
+push constant 0 
 pop local 1
 label LOOP
 push local 0
@@ -18,10 +18,15 @@ push local 1
 eq
 if-goto END
 push constant 1
-push local 1
-add
+push local 1 
+add 
 pop local 1
-push argument 1
-push local 0
-add
-pop argument 1
+push local 2 
+push local 0 
+add 
+pop local 2
+goto LOOP
+label END
+push local 2
+label ENDLOOP
+goto ENDLOOP
