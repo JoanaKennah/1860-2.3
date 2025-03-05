@@ -1,58 +1,38 @@
+push constant 32767
+neg
+push constant 1
+sub
 push argument 0
-push argument 0
-
-if-lt NEGATIVE
-
-pop argument 1
+eq
+if-goto default
+push argument 0 
 push constant 0
+lt
+if-goto conversion
+goto rerun
+label conversion
+push constant 1
 pop argument 2
 push constant 0
 pop argument 3
-
-label NEGATIVE
-push argument 0
-push constant 32768
-eq
-if-goto UNCOMPUTABLE
-
 push argument 0
 neg
+pop argument 1 
+goto end
+label rerun
+push argument 0
 pop argument 1
-push constant 1
+push constant 0
 pop argument 2
 push constant 0
 pop argument 3
-
-label UNCOMPUTABLE
+goto end
+label default
 push constant 1
 pop argument 3
 push constant 0
 pop argument 1
-push constant 1
+push constant 0
 pop argument 2
-
-
-
-
-@0
-D=M
-@5
-M=D
-@16
-D;JGE
-@2
-M=1
-@0
-D=M
-D=!D
-D=D+1
-@5
-M=D
-@18
-0;JMP
-@2
-M=0
-@5
-D=M
-@1
-M=D
+label end
+goto end
